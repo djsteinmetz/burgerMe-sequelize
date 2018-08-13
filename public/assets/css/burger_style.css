@@ -1,0 +1,86 @@
+* {
+    font-family: 'Didact Gothic', sans-serif;
+}
+.container {
+    margin-bottom: 30px;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    margin-bottom: 40px;
+}
+h4 {
+    text-align: center;
+    margin-top: 50px;
+}
+i {
+    font-size: 18px;
+}
+#devour {
+    margin-bottom: 20px;
+}
+.delete-burger:hover {
+    color: red;
+    font-size: 2.2rem;
+    -webkit-transition: font-size .2s; /* Safari */
+    transition: font-size .2s; 
+}
+.devour-burger:hover {
+    color: rgb(192,192,192);
+    font-size: 2.2rem;
+    -webkit-transition: font-size .2s; /* Safari */
+    transition: font-size .2s;
+}
+#instructions {
+    vertical-align: middle;
+}
+#jumbotron1 {
+    padding: 100px 0px 0px 0px;
+}
+.jumbotron {
+    background-color: rgb(233, 236, 239, 0.6)
+}
+#burgerMe {
+    position: relative;
+    z-index: 500;
+    vertical-align: top;
+    font-size: 5em;
+    font-family: 'Francois One', sans-serif;
+    margin-top: -30px;
+}
+.burger {
+    position: relative;
+    width: 151.2px;
+    opacity: 0.8;
+    z-index: 1;
+}
+.fa-hands {
+    position: relative;
+    display: block;
+    font-size: 7.5rem;
+    color: rgb(251, 208, 67 );
+    margin-top: -90px;
+    z-index: 10;
+}
+.fa-utensils {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin: 0px 5px 0px 5px;
+}
+.fa-trash-alt {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin: 0px 5px 0px 5px;
+    -webkit-transition: font-size .2s; /* Safari */
+    transition: font-size .2s; 
+}
+.fa-grin-tongue-wink {
+    font-size: 8rem;
+    color: rgb(251, 208, 67 );
+    padding-top: 30px;
+}
+.btn-primary {
+    background-color: rgb(71, 104, 173);
+    border-color: rgb(71, 104, 173);
+}
