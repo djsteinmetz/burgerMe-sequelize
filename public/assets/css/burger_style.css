@@ -17,6 +17,9 @@ h4 {
 i {
     font-size: 18px;
 }
+.burgerDiv {
+    border: 1px solid #999999;
+}
 #devour {
     margin-bottom: 20px;
 }

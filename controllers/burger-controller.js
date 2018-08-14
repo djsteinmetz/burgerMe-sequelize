@@ -1,13 +1,19 @@
 var db = require("../models");
 // Use Handlebars to render the main index.html page with the todos in it.
+
 module.exports = function (app) {
     app.get("/", function (req, res) {
         console.log("got here");
-        db.Burger.findAll({}).then(function (data) {
-            console.log(data);
+        db.Burger.findAll({
+            include: [{model: db.User}]
+        }).then(function (data) {
+            console.log("###########", data);
+            var user = data[0].Users[0].dataValues.name;
             var hbsObj = {
-                burgers: data
+                burgers: data,
+                user: user
             };
+            console.log("HBSOBJ USER: ", hbsObj.burgers[0].Users[0].dataValues.name);
             console.log("OBJECT: ", hbsObj);
             res.render("index", hbsObj);
         });
@@ -22,20 +28,27 @@ module.exports = function (app) {
         }).then(function (result) {
             res.json(result);
         })
-
     });
 
     app.put("/api/burgers/:id", function (req, res) {
-        console.log(req.body);
-        db.Burger.update({
-            devoured: req.body.devoured
-        }, {
-                where: {
-                    id: req.params.id,
-                }
-            }).then(function (result) {
-                res.json(result);
+        console.log(req.body.user);
+        if (req.body.user) {
+            db.User.create({
+                name: req.body.user,
+                BurgerId: req.body.id
+            }).then(function (dbCustomer) {
+                return db.Burger.update({
+                    devoured: req.body.devoured
+                }, {
+                        where: {
+                            id: req.params.id,
+                        }
+                    }).then(function (result) {
+                        res.json(result);
+                    })
             })
+        }
+
     });
 
     app.delete("/api/burgers/:id", function (req, res) {
@@ -49,5 +62,4 @@ module.exports = function (app) {
             res.json(result);
         });
     });
-};
-
+}

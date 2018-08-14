@@ -16,7 +16,11 @@ $(document).ready(function () {
     $(".devour-burger").on("click", function (event) {
         event.preventDefault();
         var id = $(this).data("id");
+        var user = $("#user-" + id).val();
+        console.log(user);
         var objColVals = {
+            user: user,
+            id: id,
             devoured: true
         };
         console.log(id);
@@ -47,8 +51,4 @@ $(document).ready(function () {
             }
         );
     })
-
-    $.get("/", function (data) {
-        console.log("Home page served")
-    });
 })
