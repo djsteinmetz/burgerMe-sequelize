@@ -1,38 +1,21 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <form class="create-form">
-                <h3>
-                    <label for="newBurger">Your favorite burger not on the menu? Prepare one!</label>
-                </h3>
+        <div class="col-md-6">
+            <h2 class="text-center">MENU</h2>
+            <form class="create-form text-center">
                 <div class="form-group">
                     <input type="text" id="newBurger" name="name" placeholder="Burger Name">
-                    <button type="submit" class="btn btn-primary mb-2">Serve Burger</button>
+                    <button type="submit" class="btn btn-primary mb-2">Add a Burger!</button>
                 </div>
-
             </form>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 text-left">
-            <h2 class="text-center">MENU</h2>
             <ul>
-
                 {{#each burgers}} {{#unless devoured}}
                 <p>{{> burgers/burger-block}}</p>
                 {{/unless}} {{/each}}
-
             </ul>
         </div>
-        <div class="col-md-4 text-center" id="instructions">
-            <h2>CONTROLS</h2>
-            <i class="fas fa-utensils" id="devour"> = DEVOUR </i>
-            <i class="fas fa-trash-alt" id="discard"> = DISCARD </i>
-        </div>
-        <div class="col-md-4 text-left">
-            <h2 class="text-center">DEVOURED BURGERS</h2>
+        <div class="col-md-6">
+            <h2 class="text-center">BURGERS EATEN</h2>
             <ul>
                 {{#each burgers}} {{#if devoured}}
                 <p>{{> burgers/burger-block}}</p>

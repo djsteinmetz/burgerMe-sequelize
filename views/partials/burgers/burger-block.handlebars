@@ -1,18 +1,19 @@
-<p>
-	{{#unless devoured}}
-	<i class="devour-burger fas fa-utensils" data-id="{{this.id}}"></i>
-	{{/unless}}
-
-	<i class="delete-burger fas fa-trash-alt" data-id="{{this.id}}"></i>
-	{{burger_name}}: {{#unless devoured}} Ready to eat! <form class="create-form">
-		<h3>
+<div class="card" style="width: 18rem">
+	<div class="card-body">
+		<h5 class="card-title">{{burger_name}}{{#if devoured}}<i class="delete-burger fas fa-trash-alt" data-id="{{this.id}}"></i>{{/if}}</h5>
+		{{#unless devoured}}
+		<form class="create-form text-left">
 			<label for="user">
-				<h5>Who is eating this burger?</h5>
+				<p>Who is <i> devouring </i> this burger?</p>
 			</label>
-		</h3>
-		<div class="form-group">
-			<input type="text" id="user-{{this.id}}" name="name" placeholder="Your Name">
-		</div>
-	</form>{{/unless}} 
-	{{#if devoured}}<br/>Devoured by {{this.Users.0.name}}{{/if}}
-</p>
+			<div class="form-group">
+				<input type="text" id="user-{{this.id}}" name="name" placeholder="Your Name"> {{#unless devoured}}
+				<i class="devour-burger fas fa-utensils" data-id="{{this.id}}"></i>
+				{{/unless}}
+			</div>
+		</form>{{/unless}} {{#if devoured}}
+	</div>
+	<div class="card-footer text-muted">
+		Devoured by <strong>{{this.Users.0.name}}</strong>{{/if}}
+	</div>
+</div>
