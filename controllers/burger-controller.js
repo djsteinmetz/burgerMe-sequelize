@@ -8,10 +8,8 @@ module.exports = function (app) {
             include: [{model: db.User}]
         }).then(function (data) {
             console.log("###########", data);
-            var user = data[0].Users[0].dataValues.name;
             var hbsObj = {
-                burgers: data,
-                user: user
+                burgers: data
             };
             console.log("HBSOBJ USER: ", hbsObj.burgers[0].Users[0].dataValues.name);
             console.log("OBJECT: ", hbsObj);
