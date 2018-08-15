@@ -9,7 +9,13 @@ var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
 if (process.env.JAWSDB_URL) {
-  connection = new Sequelize(process.env.JAWSDB_URL);
+  connection = new Sequelize(process.env.JAWSDB_URL, {
+    dialect: 'mySQL',
+    protocol: 'mySQL',
+    port: match[4],
+    host: match[3],
+    logging: true
+  })
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
