@@ -4,18 +4,12 @@ var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');
 var basename  = path.basename(__filename);
-var env       = process.env.NODE_ENV || 'development';
+var env       = process.env.NODE_ENV || 'developemnt';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
-if (process.env.JAWSDB_URL) {
-  connection = new Sequelize(process.env.JAWSDB_URL, {
-    dialect: 'mySQL',
-    protocol: 'mySQL',
-    port: match[4],
-    host: match[3],
-    logging: true
-  })
+if (config.use_env_variable) {
+  var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
