@@ -1,14 +1,15 @@
 # BurgerMe - *SEQUELIZED*
-This application is an expansion of the "BurgerMe" that utilizes the ORM "Sequelize".
+This application is an expansion of the "BurgerMe" that utilizes the ORM "Sequelize".  The original BurgerMe Application can be found here: https://djs-burgerme.herokuapp.com/
 
 ## New Functionality
+### Explore the application: https://djs-burgerme-sequelized.herokuapp.com
 * Added API Links
 * Added a simple Burger/User relationship
 * Improved styling and functionality
 
 ## Installation
 ```
-$ git clone https://github.com/djsteinmetz/burgerMe.git
+$ git clone https://github.com/djsteinmetz/burgerMe-sequelize.git
 $ npm install
 $ node (or nodemon) server
 ```
